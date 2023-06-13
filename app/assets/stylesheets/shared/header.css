@@ -25,3 +25,44 @@
   text-align: center;
   color: burlywood;
 }
+
+.lists-center {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login, .sign-up {
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+  /* 中央揃え */
+  display: block;
+  /* 幅の指定 */
+  width: 100%;
+  max-width: 10vw;
+  box-sizing: border-box;
+  padding: 10px;
+  /* 色の指定 */
+  background: linear-gradient(135deg, #ffd900, #ff9300);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+  border: 2px solid #ff9300;
+  background: #fff;
+  color: #ff9300;
+}
+.login:hover, .sign-up:hover {
+  background: #ff9300;
+  color: #fff;
+}
+
+.sign-up {
+  margin-left: 20px;
+}
+
+.login {
+margin-right: 20px;
+} 

@@ -1,1 +1,56 @@
 <%= render "shared/header" %>
+
+<div class="index-main">
+  <div class="pet-contents">
+    <%= image_tag "pag.jpg", class:"pet-image" %>
+
+    <div class="pet-content">
+      <div class="pet-name">
+        <%= "そら" %>
+      </div>
+      <div class="pet-gender">
+        <%= "男の子" %>
+      </div>
+      <div class="pet-birth">
+        <%= "誕生日" %>
+      </div>
+      <div class="pet-birth-date">
+        <%= "2023/06/13" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="new-logs">
+    <ul class="new-log">
+      <li class="log-list">
+        <%= "トイレ" %><br>
+        <div class="log-content">
+          <%= "二回行きました" %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <li class="log-list">
+        <%= "ご飯" %><br>
+        <div class="log-content">
+          <%= "3回食べて、全部残さず食べました" %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <li class="log-list">
+        <%= "元気" %><br>
+        <div class="log-content">
+          <%= "とても元気" %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

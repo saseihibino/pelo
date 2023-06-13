@@ -3,4 +3,15 @@
     <%= link_to image_tag("pelo-logo.png", class:"pelo-icon"), "/" %>
     <div class='pelo-name'>PeLO</div>
   </div>
+  <ul class='lists-center'>
+    <%# ログインしたらログアウトボタンが表示される %>
+     <%# <li><%= link_to current_user.nick_name, "#", class: "user-nickname" </li> %>
+     <%# <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" </li> %>
+    <%# ログインしたらログアウトボタンが表示される %>
+
+    <%# ログインしていないなら表示される %>
+    <li><%= link_to 'ログイン',  "#", class: "login" %></li>
+    <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+    <%# ログインしていないなら表示される %>
+  </ul>
 </header>
