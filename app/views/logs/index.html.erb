@@ -7,6 +7,7 @@
     <div class="pet-content">
       <div class="pet-name">
         <%= "そら" %>
+        <%= link_to '記録する',  "#", class: "new-record" %>
       </div>
       <div class="pet-gender">
         <%= "男の子" %>
@@ -91,6 +92,21 @@
           <%= "2023/06/13" %>
         </div>
       </li>
+
+      <li class="log-list">
+        <%= "メモ" %><br>
+        <div class="log-content">
+          <%= "記録に残しておきたい事" %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <div class="edit">
+        <%= link_to "記録を編集する", "#", class:"edit-btn" %>
+        <%= link_to "削除", "#", class:"delete-btn" %>
+      </div>
     </ul>
   </div>
 </div>
