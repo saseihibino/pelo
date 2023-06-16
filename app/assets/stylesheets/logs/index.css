@@ -156,6 +156,6 @@
   margin-right: 60px;
 }
 .delete-btn:hover {
-  background: #ff9300;
+  background: red;
   color: #fff;
 }
