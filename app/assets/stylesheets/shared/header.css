@@ -83,3 +83,79 @@
   color: #fff;
 }
 
+.user-name {
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+  /* 中央揃え */
+  display: block;
+  /* 幅の指定 */
+  width: 100%;
+  max-width: 10vw;
+  box-sizing: border-box;
+  padding: 10px;
+  /* 色の指定 */
+  color: #fff;
+  font-weight: bold;
+  color: #ff9300;
+  margin-right: 60px;
+  font-size: 40px;
+}
+
+.logout {
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+  /* 中央揃え */
+  display: block;
+  /* 幅の指定 */
+  width: 100%;
+  max-width: 10vw;
+  box-sizing: border-box;
+  padding: 10px;
+  /* 色の指定 */
+  background: linear-gradient(135deg, #ffd900, #ff9300);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+  border: 2px solid red;
+  background: #fff;
+  color: #ff9300;
+  margin-right: 40px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+.logout:hover {
+  background: red;
+  color: #fff;
+}
+
+.pet-register {
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+  /* 中央揃え */
+  display: block;
+  /* 幅の指定 */
+  width: 100%;
+  max-width: 10vw;
+  box-sizing: border-box;
+  padding: 10px;
+  /* 色の指定 */
+  background: linear-gradient(135deg, #ffd900, #ff9300);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+  border: 2px solid #ff9300;
+  background: #fff;
+  color: #ff9300;
+  margin-right: 40px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+.pet-register:hover {
+  background: #ff9300;
+  color: #fff;
+}
