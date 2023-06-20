@@ -11,7 +11,6 @@
   <div class="form-group">
     <div class="form-text-wrap">
       <label class="form-text">ペット画像</label>
-      <span class="indispensable">必須</span>
     </div>
     <div class="click-upload">
       <p>
@@ -54,19 +53,19 @@
       <label class="form-text">性別</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"input-default", id:"pet-gender"}) %>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"input-default", id:"pet-gender"}) %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">種類</label>
     </div>
-    <%= f.text_area :type, class:"input-default", placeholder:"例)犬", autofocus: true %>
+    <%= f.text_area :pet_type, class:"input-default", placeholder:"例)犬", autofocus: true %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メモ</label>
     </div>
-    <%= f.text_area :memo, class:"input-default", placeholder:"例)爪切った" %>
+    <%= f.text_area :memo, class:"input-default", placeholder:"例)特徴など" %>
   </div>
   
   <div class='register-btn'>
