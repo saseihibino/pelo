@@ -2,23 +2,51 @@
 
 <div class="index-main">
   <div class="pet-contents">
-    <%= image_tag "pag.jpg", class:"pet-image" %>
 
-    <div class="pet-content">
-      <div class="pet-name">
-        <%= "そら" %>
-        <%= link_to '記録する',  "#", class: "new-record" %>
+    <% if @pets.present? %>
+      <% if @selected_pet %>
+        <%= image_tag @selected_pet.image, class:"pet-image" %>
+        <div class="pet-content">
+          <div class="pet-name">
+            <%= @selected_pet.petname %>
+            <%= link_to '記録する',  "#", class: "new-record" %>
+          </div>
+          <div class="pet-gender">
+            <%= @selected_pet.gender.name %>
+          </div>
+          <div class="pet-birth">
+            <%= "誕生日" %>
+          </div>
+          <div class="pet-birth-date">
+            <%= @selected_pet.birthday %>
+          </div>
+        </div>
+      <% end %>  
+    <% else %>
+      <%= image_tag "pag.jpg", class:"pet-image" %>
+      <div class="pet-content">
+        <div class="pet-name">
+          <%= "お名前" %>
+          <%= link_to '記録する',  "#", class: "new-record" %>
+        </div>
+        <div class="pet-gender">
+          <%= "性別" %>
+        </div>
+        <div class="pet-birth">
+          <%= "誕生日" %>
+        </div>
+        <div class="pet-birth-date">
+          <%= "2023/06/13" %>
+        </div>
       </div>
-      <div class="pet-gender">
-        <%= "男の子" %>
-      </div>
-      <div class="pet-birth">
-        <%= "誕生日" %>
-      </div>
-      <div class="pet-birth-date">
-        <%= "2023/06/13" %>
-      </div>
-    </div>
+    <% end %>
+
+    <% if @pets %>
+      <%= form_tag logs_path, method: :get do %>
+        <%= select_tag :pet_id, options_from_collection_for_select(@pets, :id, :petname) %>
+        <%= submit_tag "選択" %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="new-logs">
