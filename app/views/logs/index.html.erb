@@ -42,9 +42,9 @@
     <% end %>
 
     <% if @pets %>
-      <%= form_tag logs_path, method: :get do %>
-        <%= select_tag :pet_id, options_from_collection_for_select(@pets, :id, :petname) %>
-        <%= submit_tag "選択" %>
+      <%= form_tag logs_path, method: :get, class:"select-pets" do %>
+        <%= select_tag :pet_id, options_from_collection_for_select(@pets, :id, :petname), class:"select-pet" %>
+        <%= submit_tag "選択", class:"select-pet-btn" %>
       <% end %>
     <% end %>
   </div>

@@ -109,8 +109,7 @@
   /* 中央揃え */
   display: block;
   /* 幅の指定 */
-  width: 100%;
-  max-width: 10vw;
+  width: 150px;
   box-sizing: border-box;
   padding: 10px;
   /* 色の指定 */
@@ -123,7 +122,6 @@
   background: #fff;
   color: #ff9300;
   margin-right: 40px;
-  margin-left: 20px;
   font-size: 14px;
 }
 .logout:hover {
@@ -138,8 +136,7 @@
   /* 中央揃え */
   display: block;
   /* 幅の指定 */
-  width: 100%;
-  max-width: 10vw;
+  width: 150px;
   box-sizing: border-box;
   padding: 10px;
   /* 色の指定 */
@@ -152,7 +149,6 @@
   background: #fff;
   color: #ff9300;
   margin-right: 40px;
-  margin-left: 20px;
   font-size: 14px;
 }
 .pet-register:hover {
