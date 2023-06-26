@@ -1,0 +1,41 @@
+<%= form_with model: @log, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      健康記録
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ご飯</label>
+    </div>
+    <%= f.text_area :petname, class:"input-default", id:"nickname", placeholder:"例) CanisIupusfamiliaris", maxlength:"40" %>
+  </div>
+  
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">性別</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"input-default", id:"pet-gender"}) %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">種類</label>
+    </div>
+    <%= f.text_area :pet_type, class:"input-default", placeholder:"例)犬", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">メモ</label>
+    </div>
+    <%= f.text_area :memo, class:"input-default", placeholder:"例)特徴など" %>
+  </div>
+  
+  <div class='register-btn'>
+    <%= f.submit "ペット登録" ,class:"register-red-btn" %>
+  </div>
+<% end %>
