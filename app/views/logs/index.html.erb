@@ -5,7 +5,11 @@
 
     <% if @pets.present? %>
       <% if @selected_pet %>
-        <%= image_tag @selected_pet.image, class:"pet-image" %>
+        <% if @selected_pet.image.attached? %>
+          <%= image_tag @selected_pet.image, class:"pet-image" %>
+        <% else %>
+          <%= image_tag "pag.jpg", class:"pet-image" %>
+        <% end %>
         <div class="pet-content">
           <div class="pet-name">
             <%= @selected_pet.petname %>
@@ -54,7 +58,7 @@
       <li class="log-list">
         <%= "トイレ" %><br>
         <div class="log-content">
-          <%= "二回行きました" %>
+          <%= "例）何回行った&状態はどうだったか" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -64,7 +68,7 @@
       <li class="log-list">
         <%= "ご飯" %><br>
         <div class="log-content">
-          <%= "3食、全部残さず食べました" %>
+          <%= "例）何食食べたか、全部食べたか" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -74,7 +78,7 @@
       <li class="log-list">
         <%= "元気" %><br>
         <div class="log-content">
-          <%= "とても元気" %>
+          <%= "例）とても元気" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -84,7 +88,7 @@
       <li class="log-list">
         <%= "散歩時間" %><br>
         <div class="log-content">
-          <%= "3時間" %>
+          <%= "例）何回・何時間行ったか" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -94,7 +98,7 @@
       <li class="log-list">
         <%= "体温" %><br>
         <div class="log-content">
-          <%= "38℃" %>
+          <%= "例）38℃" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -104,7 +108,7 @@
       <li class="log-list">
         <%= "体重" %><br>
         <div class="log-content">
-          <%= "10kg" %>
+          <%= "例）10kg" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -114,7 +118,7 @@
       <li class="log-list">
         <%= "体長" %><br>
         <div class="log-content">
-          <%= "95cm" %>
+          <%= "例）95cm" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -124,7 +128,7 @@
       <li class="log-list">
         <%= "メモ" %><br>
         <div class="log-content">
-          <%= "記録に残しておきたい事" %>
+          <%= "例）記録に残しておきたい事" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
