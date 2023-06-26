@@ -8,34 +8,63 @@
 
   <%= render 'shared/error_messages', model: f.object %>
 
+      <% if @pets %>
+      <%= form_tag logs_path, method: :get, class:"select-pets" do %>
+        <%= select_tag :pet_id, options_from_collection_for_select(@pets, :id, :petname), class:"select-pet" %>
+        <%= submit_tag "選択", class:"select-pet-btn" %>
+      <% end %>
+    <% end %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">トイレ</label>
+    </div>
+    <%= f.text_area :toilet, class:"input-default", placeholder:"何回したか？状態はどうだったか？", maxlength:"40" %>
+  </div>
+
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ご飯</label>
     </div>
-    <%= f.text_area :petname, class:"input-default", id:"nickname", placeholder:"例) CanisIupusfamiliaris", maxlength:"40" %>
+    <%= f.text_area :meal, class:"input-default", placeholder:"何回食べたか？完食したか？", maxlength:"40" %>
   </div>
   
   <div class="form-group">
     <div class="form-text-wrap">
-      <label class="form-text">性別</label>
-      <span class="indispensable">必須</span>
+      <label class="form-text">元気</label>
     </div>
-    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"input-default", id:"pet-gender"}) %>
+    <%= f.collection_select(:mood_id, Mood.all, :id, :name, {}, {class: "input-default", id: "pet-mood"}) %>
   </div>
+
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">種類</label>
+      <label class="form-text">散歩時間</label>
     </div>
-    <%= f.text_area :pet_type, class:"input-default", placeholder:"例)犬", autofocus: true %>
+    <%= f.text_area :walktime, class:"input-default", placeholder:"何時間散歩したか", autofocus: true %>
   </div>
+
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">メモ</label>
+      <label class="form-text">体温</label>
     </div>
-    <%= f.text_area :memo, class:"input-default", placeholder:"例)特徴など" %>
+    <%= f.text_area :bodytemperature, class:"input-default", placeholder:"何度あったか" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">体重</label>
+    </div>
+    <%= f.text_area :weight, class:"input-default", placeholder:"何キロあったか" %>
+  </div>
+
+   <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">体長</label>
+    </div>
+    <%= f.text_area :length, class:"input-default", placeholder:"何センチあったか" %>
   </div>
   
   <div class='register-btn'>
-    <%= f.submit "ペット登録" ,class:"register-red-btn" %>
+    <%= f.submit "記録する" ,class:"register-red-btn" %>
   </div>
 <% end %>

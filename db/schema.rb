@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2023_06_21_032505) do
   create_table "logs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "toilet"
     t.string "meal"
-    t.integer "mood"
+    t.integer "mood_id"
     t.integer "walktime"
     t.string "bodytemperature"
     t.string "weight"

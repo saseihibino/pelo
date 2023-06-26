@@ -3,7 +3,7 @@ class CreateLogs < ActiveRecord::Migration[6.0]
     create_table :logs do |t|
       t.string     :toilet
       t.string     :meal
-      t.integer    :mood
+      t.integer    :mood_id
       t.integer    :walktime
       t.string     :bodytemperature
       t.string     :weight

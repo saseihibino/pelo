@@ -13,7 +13,7 @@
         <div class="pet-content">
           <div class="pet-name">
             <%= @selected_pet.petname %>
-            <%= link_to '記録する',  "#", class: "new-record" %>
+            <%= link_to '記録する',  new_log_path, class: "new-record" %>
           </div>
           <div class="pet-gender">
             <%= @selected_pet.gender.name %>
@@ -64,6 +64,7 @@
           <%= "2023/06/13" %>
         </div>
       </li>
+
 
       <li class="log-list">
         <%= "ご飯" %><br>
