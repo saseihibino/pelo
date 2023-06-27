@@ -7,13 +7,16 @@
   </div>
 
   <%= render 'shared/error_messages', model: f.object %>
-
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ペット選択</label>
+    </div>
       <% if @pets %>
       <%= form_tag logs_path, method: :get, class:"select-pets" do %>
         <%= select_tag :pet_id, options_from_collection_for_select(@pets, :id, :petname), class:"select-pet" %>
-        <%= submit_tag "選択", class:"select-pet-btn" %>
       <% end %>
     <% end %>
+    </div>
 
   <div class="form-group">
     <div class='form-text-wrap'>
