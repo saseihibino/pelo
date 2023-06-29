@@ -6,6 +6,7 @@ class LogsController < ApplicationController
 
       if params[:pet_id].present?
         @selected_pet = current_user.pets.find(params[:pet_id])
+        @latest_logs = @selected_pet.logs.order(created_at: :desc).limit(1)
       end
     end
   end
