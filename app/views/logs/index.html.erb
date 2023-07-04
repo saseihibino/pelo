@@ -53,12 +53,14 @@
     <% end %>
   </div>
 
+<% if @latest_logs %>
+<% @latest_logs.each do |log| %>
   <div class="new-logs">
     <ul class="new-log">
       <li class="log-list">
         <%= "トイレ" %><br>
         <div class="log-content">
-          <%= "例）何回行った&状態はどうだったか" %>
+          <%= log.toilet %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -68,7 +70,95 @@
       <li class="log-list">
         <%= "ご飯" %><br>
         <div class="log-content">
-          <%= "例）何食で、完食したか" %>
+          <%= log.meal %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <li class="log-list">
+        <%= "元気" %><br>
+        <div class="log-content">
+          <%= log.mood.name %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <li class="log-list">
+        <%= "散歩時間" %><br>
+        <div class="log-content">
+          <%= log.walktime %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <li class="log-list">
+        <%= "体温" %><br>
+        <div class="log-content">
+          <%= log.bodytemperature %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <li class="log-list">
+        <%= "体重" %><br>
+        <div class="log-content">
+          <%= log.weight %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <li class="log-list">
+        <%= "体長" %><br>
+        <div class="log-content">
+          <%= log.length %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <li class="log-list">
+        <%= "メモ" %><br>
+        <div class="log-content">
+          <%= log.memo %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <div class="edit">
+        <%= link_to "記録を編集する", "#", class:"edit-btn" %>
+        <%= link_to "削除", "#", class:"delete-btn" %>
+      </div>
+      <% end %>
+      <% else %>
+      <div class="new-logs">
+    <ul class="new-log">
+      <li class="log-list">
+        <%= "トイレ" %><br>
+        <div class="log-content">
+          <%= "例）3回した、状態も良好" %>
+        </div>
+        <div class="log-date">
+          <%= "2023/06/13" %>
+        </div>
+      </li>
+
+      <li class="log-list">
+        <%= "ご飯" %><br>
+        <div class="log-content">
+          <%= "例）3食きちんと食べた、食べ残しもない" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -88,7 +178,7 @@
       <li class="log-list">
         <%= "散歩時間" %><br>
         <div class="log-content">
-          <%= "例）何回・何時間行ったか" %>
+          <%= "例）3時間" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -98,7 +188,7 @@
       <li class="log-list">
         <%= "体温" %><br>
         <div class="log-content">
-          <%= "例）38℃" %>
+          <%= "例）28度" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -108,7 +198,7 @@
       <li class="log-list">
         <%= "体重" %><br>
         <div class="log-content">
-          <%= "例）10kg" %>
+          <%= "例）10キロ" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -118,7 +208,7 @@
       <li class="log-list">
         <%= "体長" %><br>
         <div class="log-content">
-          <%= "例）95cm" %>
+          <%= "例）120センチ" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -128,7 +218,7 @@
       <li class="log-list">
         <%= "メモ" %><br>
         <div class="log-content">
-          <%= "例）記録に残しておきたい事" %>
+          <%= "例）今日も元気！" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -139,6 +229,7 @@
         <%= link_to "記録を編集する", "#", class:"edit-btn" %>
         <%= link_to "削除", "#", class:"delete-btn" %>
       </div>
+    <% end %>
     </ul>
   </div>
 </div>
