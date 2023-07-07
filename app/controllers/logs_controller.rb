@@ -45,6 +45,32 @@ class LogsController < ApplicationController
     end
   end
 
+  def edit 
+    @pets = current_user.pets
+
+    if params[:pet_id].present?
+      @selected_pet = current_user.pets.find(params[:pet_id])
+    end
+    @log = Log.find(params[:id])
+    return if current_user.id == @log.user.id
+    redirect_to action: :index
+  end
+
+  def update
+    @pets = current_user.pets
+
+    if params[:pet_id].present?
+      @selected_pet = current_user.pets.find(params[:pet_id])
+    end
+
+    @log = Log.find(params[:id])
+    if @log.update(log_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def log_params
