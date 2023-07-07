@@ -139,7 +139,7 @@
 
       <div class="edit">
         <%= link_to "記録を編集する", "#", class:"edit-btn" %>
-        <%= link_to "削除", "#", class:"delete-btn" %>
+        <%= link_to "削除", log_path(log.id), method: :delete, class:"delete-btn" %>
       </div>
       <% end %>
       <% else %>
@@ -224,11 +224,6 @@
           <%= "2023/06/13" %>
         </div>
       </li>
-
-      <div class="edit">
-        <%= link_to "記録を編集する", "#", class:"edit-btn" %>
-        <%= link_to "削除", "#", class:"delete-btn" %>
-      </div>
     <% end %>
     </ul>
   </div>

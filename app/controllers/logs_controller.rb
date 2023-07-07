@@ -35,6 +35,16 @@ class LogsController < ApplicationController
     end
   end
 
+  def destroy
+    log = Log.find(params[:id])
+    if user_signed_in? && current_user.id = log.user.id
+      log.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def log_params
