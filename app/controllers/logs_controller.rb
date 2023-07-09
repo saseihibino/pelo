@@ -73,6 +73,7 @@ class LogsController < ApplicationController
 
   def toiletlog 
     @logs = Log.where(pet_id: params[:pet_id]).order(created_at: :desc)
+    @pet = Pet.find(params[:pet_id])
   end
 
   private
