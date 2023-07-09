@@ -71,6 +71,10 @@ class LogsController < ApplicationController
     end
   end
 
+  def toiletlog 
+    @logs = Log.where(pet_id: params[:pet_id]).order(created_at: :desc)
+  end
+
   private
 
   def log_params

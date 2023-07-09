@@ -60,7 +60,7 @@
       <li class="log-list">
         <%= "トイレ" %><br>
         <div class="log-content">
-          <%= log.toilet %>
+          <%= link_to log.toilet, toiletlog_logs_path(pet_id: log.pet_id), method: :get %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
