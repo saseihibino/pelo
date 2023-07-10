@@ -1,4 +1,16 @@
 <%= @pet.petname %>
 <% @logs.each do |log| %>
-  <%= log.toilet %>
+  <div class="new-logs">
+    <ul class="new-log">
+      <li class="log-list">
+        <%= "トイレ" %><br>
+        <div class="log-content">
+          <%= log.toilet %>
+        </div>
+        <div class="log-date">
+          <%= log.created_at.strftime("%Y/%m/%d") %>
+        </div>
+      </li>
+    </ul>
+  </div>
 <% end %>

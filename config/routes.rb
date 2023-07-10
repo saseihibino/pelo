@@ -5,6 +5,13 @@ Rails.application.routes.draw do
  resources :logs do
  collection do
   get 'toiletlog'
+  get 'meallog'
+  get 'moodlog'
+  get 'walktimelog'
+  get 'bodytemperaturelog'
+  get 'weightlog'
+  get 'lengthlog'
+  get 'memolog'
 end
 end
 end
