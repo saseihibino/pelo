@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+<div class="index-main">
+  <div class="pet-contents">
+    <% if @pet.image.attached? %>
+      <%= image_tag @pet.image, class:"pet-image" %>
+    <% else %>
+      <%= image_tag "pag.jpg", class:"pet-image" %>
+    <% end %>
+    <div class="pet-content">
+      <div class="pet-name">
+        <%= @pet.petname %>
+      </div>
+      <div class="pet-gender">
+        <%= @pet.gender.name %>
+      </div>
+      <div class="pet-birth">
+        <%= "誕生日" %>
+      </div>
+      <div class="pet-birth-date">
+        <%= @pet.birthday %>
+      </div>
+    </div>
+  </div>
+
+    <% @logs.each do |log| %>
+      <div class="new-logs">
+        <ul class="new-log">
+          <li class="log-list">
+            <%= "メモ" %><br>
+            <div class="log-content">
+              <%= log.memo %>
+            </div>
+            <div class="log-date">
+              <%= log.created_at.strftime("%Y/%m/%d") %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -90,7 +90,7 @@
       <li class="log-list">
         <%= "散歩時間" %><br>
         <div class="log-content">
-          <%= log.walktime %>
+          <%= "#{log.walktime} H" %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
@@ -100,7 +100,7 @@
       <li class="log-list">
         <%= "体温" %><br>
         <div class="log-content">
-          <%= log.bodytemperature %>
+          <%= "#{log.bodytemperature} ℃" %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
@@ -110,7 +110,7 @@
       <li class="log-list">
         <%= "体重" %><br>
         <div class="log-content">
-          <%= log.weight %>
+          <%= link_to "#{log.weight} Kg", weightlog_logs_path(pet_id: log.pet_id), method: :get, class:"no-underline" %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
