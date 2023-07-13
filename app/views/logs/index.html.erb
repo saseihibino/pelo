@@ -100,7 +100,7 @@
       <li class="log-list">
         <%= "体温" %><br>
         <div class="log-content">
-          <%= "#{log.bodytemperature} ℃" %>
+           <%= link_to "#{log.bodytemperature} ℃", bodytemperaturelog_logs_path(pet_id: log.pet_id), method: :get, class:"no-underline" %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
