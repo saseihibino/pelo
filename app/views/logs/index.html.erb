@@ -70,7 +70,7 @@
       <li class="log-list">
         <%= "ご飯" %><br>
         <div class="log-content">
-          <%= log.meal %>
+          <%= link_to log.meal, meallog_logs_path(pet_id: log.pet_id), method: :get, class:"no-underline" %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
@@ -80,7 +80,7 @@
       <li class="log-list">
         <%= "元気" %><br>
         <div class="log-content">
-          <%= log.mood.name %>
+          <%= link_to log.mood.name, toiletlog_logs_path(pet_id: log.pet_id), method: :get, class:"no-underline" %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
@@ -90,7 +90,7 @@
       <li class="log-list">
         <%= "散歩時間" %><br>
         <div class="log-content">
-          <%= "#{log.walktime} H" %>
+          <%= link_to "#{log.walktime} H", walktimelog_logs_path(pet_id: log.pet_id), method: :get, class:"no-underline" %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
@@ -120,7 +120,7 @@
       <li class="log-list">
         <%= "体長" %><br>
         <div class="log-content">
-          <%= log.length %>
+          <%= link_to "#{log.length} cm", lengthlog_logs_path(pet_id: log.pet_id), method: :get, class:"no-underline" %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
@@ -130,7 +130,7 @@
       <li class="log-list">
         <%= "メモ" %><br>
         <div class="log-content">
-          <%= log.memo %>
+          <%= link_to log.memo, memolog_logs_path(pet_id: log.pet_id), method: :get, class:"no-underline" %>
         </div>
         <div class="log-date">
           <%= log.created_at.strftime("%Y/%m/%d") %>
@@ -178,7 +178,7 @@
       <li class="log-list">
         <%= "散歩時間" %><br>
         <div class="log-content">
-          <%= "例）3時間" %>
+          <%= "例）3 H" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -188,7 +188,7 @@
       <li class="log-list">
         <%= "体温" %><br>
         <div class="log-content">
-          <%= "例）28度" %>
+          <%= "例）28 ℃" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -198,7 +198,7 @@
       <li class="log-list">
         <%= "体重" %><br>
         <div class="log-content">
-          <%= "例）10キロ" %>
+          <%= "例）10 Kg" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
@@ -208,7 +208,7 @@
       <li class="log-list">
         <%= "体長" %><br>
         <div class="log-content">
-          <%= "例）120センチ" %>
+          <%= "例）120 cm" %>
         </div>
         <div class="log-date">
           <%= "2023/06/13" %>
