@@ -86,6 +86,19 @@ class LogsController < ApplicationController
     @pet = Pet.find(params[:pet_id])
   end
 
+  def walktimelog
+    @logs = Log.where(pet_id: params[:pet_id]).order(created_at: :desc)
+    @pet = Pet.find(params[:pet_id])
+  end
+
+  def moodlog
+    @logs = Log.where(pet_id: params[:pet_id]).order(created_at: :desc)
+    @pet = Pet.find(params[:pet_id])
+  end
+
+  
+
+
   private
 
   def log_params
