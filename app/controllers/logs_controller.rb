@@ -96,7 +96,20 @@ class LogsController < ApplicationController
     @pet = Pet.find(params[:pet_id])
   end
 
-  
+  def memolog
+    @logs = Log.where(pet_id: params[:pet_id]).order(created_at: :desc)
+    @pet = Pet.find(params[:pet_id])
+  end
+
+  def meallog
+    @logs = Log.where(pet_id: params[:pet_id]).order(created_at: :desc)
+    @pet = Pet.find(params[:pet_id])
+  end
+
+  def lengthlog
+    @logs = Log.where(pet_id: params[:pet_id]).order(created_at: :desc)
+    @pet = Pet.find(params[:pet_id])
+  end
 
 
   private
